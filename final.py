@@ -8,7 +8,7 @@ from preprocess import extract_segments as extract_segments
 
 
 def result():
-    img = cv2.imread('./uploads/K2LGPgX.png', 0)
+    img = cv2.imread('./uploads/some_image.png', 0)
     img = cv2.resize(img, (368, 75))
     image = []
     for i in range(1):
@@ -30,7 +30,7 @@ def result():
 
 
     class_labels = {str(x): x for x in range(10)}
-    class_labels.update({'+': 10, 'times': 11, '-': 12})
+    class_labels.update({'+': 10, '*': 11, '-': 12})
     label_class = dict(zip(class_labels.values(), class_labels.keys()))
 
     #load model
