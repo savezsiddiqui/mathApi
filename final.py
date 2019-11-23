@@ -30,7 +30,7 @@ def result():
 
 
     class_labels = {str(x): x for x in range(10)}
-    class_labels.update({'+': 10, '*': 11, '-': 12})
+    class_labels.update({'-': 10, '+': 11, '*': 12, '/': 13, '(': 14, ')': 15})
     label_class = dict(zip(class_labels.values(), class_labels.keys()))
 
     #load model

@@ -90,36 +90,6 @@ def extract_segments(img, pad=30, reshape=0, size=[28, 28], area=150, threshold=
     return final
 
 
-"""def load_data(class_labels, data_name, label_name, train=0.85, val=0.15):
-    Function to Load data from .npy files and split them into training and validation sets
-    Inputs
-    class labels : Dictionary of class labels (dict)
-    data_name : name of .npy data file, with path (str)
-    label_name : name of .npy label file, with path (str)
-    train : fraction of samples used in training set (float)
-    val : fraction of samples used in training set (float)
-    
-    data = pd.DataFrame(np.load(data_name))
-    labels = pd.DataFrame(np.load(label_name))
-
-    labels = labels.rename(columns={0: 'labels'})
-
-    labels['labels'] = labels['labels'].map(class_labels)
-    assert data.shape[0] == labels.shape[0]
-    assert isinstance(train, float)
-    isinstance(val, float), "train and val must be of type float, not {0} and {1}".format(type(train), type(val))
-    assert ((train + val) == 1.0), "train + val must equal 1.0"
-
-    one_hot = pd.get_dummies(labels['labels'])
-    sidx = int(data.shape[0] * train)
-    _data = {'train': data.iloc[:sidx].as_matrix(), 'val': data.iloc[sidx + 1:].as_matrix()}
-    _labels = {'train': one_hot.iloc[:sidx, :].as_matrix(), 'val': one_hot.iloc[sidx + 1:, :].as_matrix()}
-
-    assert (_data['train'].shape[0] == _labels['train'].shape[0])
-    assert (_data['val'].shape[0] == _labels['val'].shape[0])
-    return _data, _labels"""
-
-
 def load_models():
     '''Function to Load trained models from given path, assuming the names of each models are known
     Inputs
